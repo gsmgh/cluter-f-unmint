@@ -1,0 +1,54 @@
+---
+title: Funktionsweise
+description: Programmablauf zur Laufzeit und der Entwicklungs-Workflow
+---
+
+## Ablauf des Programms
+
+Nach dem Start durchläuft der ESP32 die folgenden Schritte:
+
+<Steps>
+  <Step title="Mit dem WLAN verbinden">
+    Der ESP32 verbindet sich mit dem konfigurierten WLAN.
+  </Step>
+
+  <Step title="Verbindung zum MQTT-Broker aufbauen">
+    Anschließend wird die Verbindung zum MQTT-Broker hergestellt.
+  </Step>
+
+  <Step title="BME280 auslesen">
+    Der Sensor wird über den I²C-Bus ausgelesen (Temperatur, Luftfeuchte, Luftdruck).
+  </Step>
+
+  <Step title="Messwerte veröffentlichen">
+    Die Werte werden in die drei MQTT-Topics geschrieben.
+  </Step>
+
+  <Step title="Warten und wiederholen">
+    Nach einer kurzen Pause beginnt der Zyklus wieder bei Schritt 3.
+  </Step>
+</Steps>
+
+<Note>
+Die Schritte 3 bis 5 wiederholen sich fortlaufend – so werden die Messwerte regelmäßig aktualisiert.
+</Note>
+
+## Entwicklungs-Workflow
+
+Der typische Ablauf beim Bearbeiten des Codes:
+
+```text
+Code in Thonny bearbeiten
+        ↓
+Datei auf ESP32 speichern (main.py)
+        ↓
+ESP32 startet das Skript automatisch
+        ↓
+Ausgabe / Fehler in der Thonny-Konsole prüfen
+```
+
+| Aspekt       | Wert                                                   |
+|--------------|--------------------------------------------------------|
+| IDE          | [Thonny](https://thonny.org/)                          |
+| Sprache      | MicroPython                                            |
+| Übertragung  | Dateien werden per Thonny direkt auf den ESP32 geschrieben |

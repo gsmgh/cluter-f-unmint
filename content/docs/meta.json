@@ -1,13 +1,12 @@
 {
-  "title": "Documentation",
+  "title": "Cluster-F",
   "pages": [
     "index",
-    "quickstart",
-    "---Getting Started---",
-    "components",
-    "theming",
-    "---Guides---",
-    "deployment",
-    "customization"
+    "---Einrichtung---",
+    "installation",
+    "konfiguration",
+    "---Betrieb---",
+    "ablauf",
+    "fehlerbehebung"
   ]
 }

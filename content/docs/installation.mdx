@@ -1,0 +1,58 @@
+---
+title: Installation
+description: MicroPython-Libraries installieren und die Dateien auf den ESP32 bringen
+---
+
+Damit der Sensor funktioniert, müssen auf dem ESP32 zwei MicroPython-Libraries installiert sein und das Programm `main.py` aufgespielt werden.
+
+## Voraussetzungen
+
+- **Thonny** ist installiert ([thonny.org](https://thonny.org/))
+- Der **ESP32** ist mit der **MicroPython-Firmware** geflasht
+- Der ESP32 ist per USB-Kabel mit dem Computer verbunden
+
+## Verwendete Libraries
+
+| Library                    | Zweck                            |
+|----------------------------|----------------------------------|
+| `micropython-bme280`       | Auslesen der BME280-Sensorwerte  |
+| `micropython-umqtt.simple` | MQTT-Client für die Veröffentlichung |
+
+## Installation über Thonny
+
+<Steps>
+  <Step title="Thonny mit dem ESP32 verbinden">
+    Thonny öffnen und unten rechts den passenden Interpreter bzw. Port auswählen
+    (**MicroPython (ESP32)**).
+  </Step>
+
+  <Step title="Paketverwaltung öffnen">
+    Im Menü auf **Tools → Manage Packages…** klicken.
+  </Step>
+
+  <Step title="Libraries suchen und installieren">
+    Im Suchfeld nacheinander die folgenden Pakete eingeben und jeweils installieren:
+
+    ```text
+    micropython-bme280
+    micropython-umqtt.simple
+    ```
+  </Step>
+</Steps>
+
+<Warning title="Nach jedem Firmware-Flash erneut installieren">
+Nach jedem **Flash der Firmware** müssen die Libraries **erneut installiert** werden, da der Flash-Vorgang das Dateisystem des ESP32 löscht.
+</Warning>
+
+## Dateistruktur auf dem ESP32
+
+Nach erfolgreicher Installation liegen folgende Dateien auf dem ESP32:
+
+```text
+/
+├── main.py              # Hauptprogramm (Sensor lesen + MQTT senden)
+└── lib/
+    ├── bme280.py        # BME280-Library
+    └── umqtt/
+        └── simple.py    # MQTT-Client-Library
+```

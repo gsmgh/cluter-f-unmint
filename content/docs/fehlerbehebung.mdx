@@ -1,0 +1,29 @@
+---
+title: Fehlerbehebung
+description: Häufige Fehlermeldungen, ihre Ursachen und Lösungen
+---
+
+Treten Probleme auf, hilft meist ein Blick in die **Thonny-Konsole** weiter. Dort werden die Fehlermeldungen ausgegeben. Die folgenden Fehler kommen am häufigsten vor.
+
+<AccordionGroup>
+  <Accordion title="MQTTException: 5">
+
+  - **Ursache:** Falsche Zugangsdaten (Benutzer/Passwort).
+  - **Lösung:** Die Credentials in `main.py` prüfen und korrigieren.
+
+  </Accordion>
+
+  <Accordion title="ECONNABORTED">
+
+  - **Ursache:** Der Broker ist nicht erreichbar – meist, weil sich seine IP per DHCP geändert hat.
+  - **Lösung:** Neue IP des Brokers ermitteln und die Variable `BROKER` in `main.py` setzen (siehe [Konfiguration](/docs/konfiguration)).
+
+  </Accordion>
+
+  <Accordion title="ImportError">
+
+  - **Ursache:** Eine Library fehlt – zum Beispiel nach einem Firmware-Flash.
+  - **Lösung:** Die Libraries über **Thonny → Manage Packages** erneut installieren (siehe [Installation](/docs/installation)).
+
+  </Accordion>
+</AccordionGroup>

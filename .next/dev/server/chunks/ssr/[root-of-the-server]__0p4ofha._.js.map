@@ -2,5 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///root/cluser-f/app/page.tsx"],"sourcesContent":["import { redirect } from 'next/navigation'\n\nexport default function Home() {\n  redirect('/docs')\n}\n"],"names":["Home"],"mappings":";;;;AAAA;AAAA;;AAEe,SAASA;IACtB,IAAA,iMAAQ,EAAC;AACX"}}]
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/COde/docu/cluter-f-unmint/app/page.tsx"],"sourcesContent":["import { redirect } from 'next/navigation'\r\n\r\nexport default function Home() {\r\n  redirect('/docs')\r\n}\r\n"],"names":["Home"],"mappings":";;;;AAAA;AAAA;;AAEe,SAASA;IACtB,IAAA,iMAAQ,EAAC;AACX"}}]
 }

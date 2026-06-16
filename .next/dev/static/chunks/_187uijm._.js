@@ -38,36 +38,26 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 const siteConfig = {
     // Site metadata
-    name: 'cluser-f',
-    description: 'Documentation for my project',
+    name: 'Cluster-F',
+    description: 'Projektdokumentation – ESP32-Umweltsensor mit BME280 über MQTT',
     url: 'https://docs.example.com',
     // Logo configuration
     logo: {
         src: '/logo.svg',
-        alt: 'Unmint',
+        alt: 'Cluster-F',
         width: 40,
         height: 40
     },
     // Navigation links
     links: {
-        github: 'https://github.com/your-org/your-repo',
+        github: 'https://github.com/gsmgh/cluter-f-unmint',
         discord: 'https://discord.gg/your-invite',
-        twitter: 'https://twitter.com/yourhandle',
-        support: 'mailto:support@example.com'
+        twitter: 'https://twitter.com/yourhandle'
     },
     // Footer configuration
     footer: {
-        copyright: '© 2025 Your Company. All rights reserved.',
-        links: [
-            {
-                label: 'Website',
-                href: 'https://example.com'
-            },
-            {
-                label: 'GitHub',
-                href: 'https://github.com/your-org'
-            }
-        ]
+        copyright: '© 2026 Finn · Schulprojekt',
+        links: []
     }
 };
 const themeConfig = {

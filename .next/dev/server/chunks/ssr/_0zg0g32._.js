@@ -55,36 +55,26 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$p
 ]);
 const siteConfig = {
     // Site metadata
-    name: 'cluser-f',
-    description: 'Documentation for my project',
+    name: 'Cluster-F',
+    description: 'Projektdokumentation – ESP32-Umweltsensor mit BME280 über MQTT',
     url: 'https://docs.example.com',
     // Logo configuration
     logo: {
         src: '/logo.svg',
-        alt: 'Unmint',
+        alt: 'Cluster-F',
         width: 40,
         height: 40
     },
     // Navigation links
     links: {
-        github: 'https://github.com/your-org/your-repo',
+        github: 'https://github.com/gsmgh/cluter-f-unmint',
         discord: 'https://discord.gg/your-invite',
-        twitter: 'https://twitter.com/yourhandle',
-        support: 'mailto:support@example.com'
+        twitter: 'https://twitter.com/yourhandle'
     },
     // Footer configuration
     footer: {
-        copyright: '© 2025 Your Company. All rights reserved.',
-        links: [
-            {
-                label: 'Website',
-                href: 'https://example.com'
-            },
-            {
-                label: 'GitHub',
-                href: 'https://github.com/your-org'
-            }
-        ]
+        copyright: '© 2026 Finn · Schulprojekt',
+        links: []
     }
 };
 const themeConfig = {
