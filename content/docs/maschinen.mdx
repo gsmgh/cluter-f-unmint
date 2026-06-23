@@ -1,0 +1,28 @@
+---
+title: Maschinen
+description: Übersicht aller Maschinen der Cluster-F Group und der darauf laufenden Dienste
+---
+
+Die Cluster-F Group besteht aus mehreren Maschinen. Jede Maschine ist für **einen Dienst** zuständig – und ist nach genau diesem Dienst benannt.
+
+## Namenskonvention
+
+<Note title="Eine Maschine = ein Dienst">
+Jede Maschine wird nach dem benannt, was auf ihr läuft. So erkennt man am Namen sofort den Dienst – und kann daraus direkt das Passwort ableiten.
+</Note>
+
+| Dienst     | Maschinenname | Zweck                         |
+|------------|---------------|-------------------------------|
+| unmint     | `unmint`      | Generiert diese Dokumentation |
+| Node-RED   | `nodered`     | Automatisierung & Flows       |
+| PostgreSQL | `posql`       | Datenbank                     |
+| OPNsense   | `opnsense`    | Firewall / Router             |
+| MQTT       | `mqtt`        | MQTT-Broker (Mosquitto)       |
+
+## Zugangsdaten
+
+Die Passwörter folgen einer festen Regel (`Ichbin` + Name in Großbuchstaben) und sind zentral hinterlegt.
+
+<Card title="Zu den Passwörtern" icon="lock" href="/docs/passwoerter">
+  Zugangsdaten aller Maschinen inklusive der Passwort-Regel.
+</Card>

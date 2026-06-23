@@ -294,6 +294,46 @@ const iconMap = {
         fileName: "[project]/app/components/docs/mdx/card.tsx",
         lineNumber: 41,
         columnNumber: 5
+    }, ("TURBOPACK compile-time value", void 0)),
+    lock: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        className: "w-5 h-5",
+        fill: "none",
+        viewBox: "0 0 24 24",
+        stroke: "currentColor",
+        strokeWidth: 1.5,
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            d: "M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+        }, void 0, false, {
+            fileName: "[project]/app/components/docs/mdx/card.tsx",
+            lineNumber: 47,
+            columnNumber: 7
+        }, ("TURBOPACK compile-time value", void 0))
+    }, void 0, false, {
+        fileName: "[project]/app/components/docs/mdx/card.tsx",
+        lineNumber: 46,
+        columnNumber: 5
+    }, ("TURBOPACK compile-time value", void 0)),
+    server: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        className: "w-5 h-5",
+        fill: "none",
+        viewBox: "0 0 24 24",
+        stroke: "currentColor",
+        strokeWidth: 1.5,
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            d: "M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z"
+        }, void 0, false, {
+            fileName: "[project]/app/components/docs/mdx/card.tsx",
+            lineNumber: 52,
+            columnNumber: 7
+        }, ("TURBOPACK compile-time value", void 0))
+    }, void 0, false, {
+        fileName: "[project]/app/components/docs/mdx/card.tsx",
+        lineNumber: 51,
+        columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0))
 };
 function Card({ title, icon, image, href, children }) {
@@ -311,19 +351,19 @@ function Card({ title, icon, image, href, children }) {
                     className: "object-contain"
                 }, void 0, false, {
                     fileName: "[project]/app/components/docs/mdx/card.tsx",
-                    lineNumber: 60,
+                    lineNumber: 70,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/components/docs/mdx/card.tsx",
-                lineNumber: 59,
+                lineNumber: 69,
                 columnNumber: 9
             }, this) : IconComponent && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mb-3 text-[var(--accent)]",
                 children: IconComponent
             }, void 0, false, {
                 fileName: "[project]/app/components/docs/mdx/card.tsx",
-                lineNumber: 69,
+                lineNumber: 79,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -331,7 +371,7 @@ function Card({ title, icon, image, href, children }) {
                 children: title
             }, void 0, false, {
                 fileName: "[project]/app/components/docs/mdx/card.tsx",
-                lineNumber: 73,
+                lineNumber: 83,
                 columnNumber: 7
             }, this),
             children && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -339,13 +379,13 @@ function Card({ title, icon, image, href, children }) {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/app/components/docs/mdx/card.tsx",
-                lineNumber: 77,
+                lineNumber: 87,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/docs/mdx/card.tsx",
-        lineNumber: 51,
+        lineNumber: 61,
         columnNumber: 5
     }, this);
     if (href) {
@@ -355,7 +395,7 @@ function Card({ title, icon, image, href, children }) {
             children: content
         }, void 0, false, {
             fileName: "[project]/app/components/docs/mdx/card.tsx",
-            lineNumber: 85,
+            lineNumber: 95,
             columnNumber: 12
         }, this);
     }
@@ -367,7 +407,7 @@ function CardGroup({ cols = 2, children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/app/components/docs/mdx/card.tsx",
-        lineNumber: 98,
+        lineNumber: 108,
         columnNumber: 5
     }, this);
 }

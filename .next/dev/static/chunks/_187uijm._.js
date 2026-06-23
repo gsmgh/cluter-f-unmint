@@ -52,11 +52,12 @@ const siteConfig = {
     links: {
         github: 'https://github.com/gsmgh/cluter-f-unmint',
         discord: 'https://discord.gg/your-invite',
-        twitter: 'https://twitter.com/yourhandle'
+        twitter: 'https://twitter.com/yourhandle',
+        support: ''
     },
     // Footer configuration
     footer: {
-        copyright: '© 2026 Finn · Schulprojekt',
+        copyright: '© 2026 Cluster-F Group',
         links: []
     }
 };

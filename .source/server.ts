@@ -1,4 +1,6 @@
 // @ts-nocheck
+import * as __fd_glob_7 from "../content/docs/passwoerter.mdx?collection=docs"
+import * as __fd_glob_6 from "../content/docs/maschinen.mdx?collection=docs"
 import * as __fd_glob_5 from "../content/docs/konfiguration.mdx?collection=docs"
 import * as __fd_glob_4 from "../content/docs/installation.mdx?collection=docs"
 import * as __fd_glob_3 from "../content/docs/index.mdx?collection=docs"
@@ -13,4 +15,4 @@ const create = server<typeof Config, import("fumadocs-mdx/runtime/types").Intern
   }
 }>({"doc":{"passthroughs":["extractedReferences"]}});
 
-export const docs = await create.docs("docs", "content/docs", {"meta.json": __fd_glob_0, }, {"ablauf.mdx": __fd_glob_1, "fehlerbehebung.mdx": __fd_glob_2, "index.mdx": __fd_glob_3, "installation.mdx": __fd_glob_4, "konfiguration.mdx": __fd_glob_5, });
+export const docs = await create.docs("docs", "content/docs", {"meta.json": __fd_glob_0, }, {"ablauf.mdx": __fd_glob_1, "fehlerbehebung.mdx": __fd_glob_2, "index.mdx": __fd_glob_3, "installation.mdx": __fd_glob_4, "konfiguration.mdx": __fd_glob_5, "maschinen.mdx": __fd_glob_6, "passwoerter.mdx": __fd_glob_7, });

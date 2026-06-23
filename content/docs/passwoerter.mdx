@@ -1,0 +1,58 @@
+---
+title: Passwörter
+description: Zentrale Ablage aller Zugangsdaten der Cluster-F-Maschinen – inklusive Namens- und Passwort-Regel
+---
+
+Hier liegen die Zugangsdaten **aller Maschinen** der Cluster-F Group an einem Ort. Damit man sich nichts merken muss, folgt alles einer festen Regel – sie steht ganz oben.
+
+## Die Regel
+
+<Note title="Namens- und Passwort-Regel">
+
+1. **Maschinenname:** Jede Maschine wird nach dem benannt, was auf ihr läuft – der Host mit *unmint* heißt `unmint`, der mit *Node-RED* heißt `nodered`.
+2. **Passwort:** Das Passwort ist immer `Ichbin` + **Maschinenname in GROSSBUCHSTABEN**.
+
+</Note>
+
+Damit ergibt sich das Passwort jeder Maschine automatisch:
+
+```text
+Passwort = "Ichbin" + MASCHINENNAME (in CAPSLOCK)
+
+unmint    →  IchbinUNMINT
+nodered   →  IchbinNODERED
+```
+
+<Warning title="Nur intern – nicht veröffentlichen">
+Diese Seite enthält echte Zugangsdaten. Sie gehört **nicht** in ein öffentliches Repository oder auf einen öffentlich erreichbaren Server. Vor einem öffentlichen Deploy die Seite entfernen oder den Zugriff absichern.
+</Warning>
+
+## Maschinen & Passwörter
+
+| Maschine   | Läuft darauf / Dienst              | Passwort         |
+|------------|------------------------------------|------------------|
+| `unmint`   | unmint – diese Dokumentation       | `IchbinUNMINT`   |
+| `nodered`  | Node-RED – Automatisierung & Flows | `IchbinNODERED`  |
+| `posql`    | PostgreSQL – Datenbank             | `IchbinPOSQL`    |
+| `opnsense` | OPNsense – Firewall / Router       | `IchbinOPNSENSE` |
+| `mqtt`     | MQTT-Broker (Mosquitto)            | `IchbinMQTT`     |
+
+## Neue Maschine aufnehmen
+
+<Steps>
+  <Step title="Maschine nach ihrem Dienst benennen">
+    Der Name richtet sich danach, was auf der Maschine läuft – z. B. `grafana`, `pihole` oder `vaultwarden`.
+  </Step>
+
+  <Step title="Passwort nach der Regel bilden">
+    `Ichbin` voranstellen, den Namen in Großbuchstaben anhängen: aus `grafana` wird `IchbinGRAFANA`.
+  </Step>
+
+  <Step title="Eintragen">
+    Neue Zeile in die Tabelle **Maschinen & Passwörter** ergänzen und die Maschine in der [Maschinen-Übersicht](/docs/maschinen) aufführen.
+  </Step>
+</Steps>
+
+<Tip title="Kurzformel">
+`Ichbin` + Name in GROSSBUCHSTABEN. Mehr muss man sich nicht merken.
+</Tip>
