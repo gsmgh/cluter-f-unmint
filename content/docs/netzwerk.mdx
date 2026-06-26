@@ -20,21 +20,21 @@ Die IPs werden per **DHCP** vergeben und können sich daher ändern. Das betriff
 
 ## Firewall-Regeln
 
-Die Firewall (OPNsense, siehe [Maschinen](/docs/maschinen)) verhält sich wie ein **ganz normaler Router**: standardmäßig ist alles dicht, nur das Nötigste ist freigegeben.
+Die Firewall (OPNsense, siehe [Maschinen](/docs/maschinen)) verhält sich wie ein **ganz normaler Router**: nach außen ist alles offen, von außen herein ist nur das Nötigste freigegeben.
 
 <Note title="Grundprinzip">
 
-- **Eingehend (von außen):** alles **zu** – kein Zugriff von außen auf das interne Netz.
-- **Ausgehend (nach außen):** grundsätzlich **nichts** raus – nur **Node-RED** und **MQTT** dürfen nach außen kommunizieren.
+- **Ausgehend (nach außen):** alles **erlaubt** – aus dem Netz ist jede Website bzw. jeder Dienst im Internet erreichbar.
+- **Eingehend (von außen ins Netz):** alles **zu** – mit zwei Ausnahmen: **Node-RED** (Port `1880`) und **MQTT** (Port `1883`).
 
 </Note>
 
-| Richtung   | Dienst             | Regel        |
-|------------|--------------------|--------------|
-| Ausgehend  | Node-RED           | erlaubt      |
-| Ausgehend  | MQTT               | erlaubt      |
-| Ausgehend  | alles Übrige       | blockiert    |
-| Eingehend  | alles              | blockiert    |
+| Richtung   | Dienst             | Port   | Regel        |
+|------------|--------------------|--------|--------------|
+| Ausgehend  | alles              | –      | erlaubt      |
+| Eingehend  | Node-RED           | `1880` | erlaubt      |
+| Eingehend  | MQTT               | `1883` | erlaubt      |
+| Eingehend  | alles Übrige       | –      | blockiert    |
 
 <Warning title="Neue Freigaben sparsam einsetzen">
 Jede zusätzliche Regel öffnet das Netz ein Stück weiter. Neue Ausnahmen nur dann anlegen, wenn ein Dienst sie zwingend braucht – und immer so eng wie möglich fassen (Quelle, Ziel, Port).
