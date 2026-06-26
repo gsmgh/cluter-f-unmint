@@ -1,0 +1,26 @@
+---
+title: Node-RED-Flows
+description: Flows, die die Messwerte vom MQTT-Broker in die Datenbank schreiben
+---
+
+<Bearbeiter name="Finn" />
+
+Die **Flows** in Node-RED holen die Messwerte vom MQTT-Broker und schreiben sie in die PostgreSQL-Datenbank. Der Server selbst (die VM) ist in [Tims Bereich](/docs/tim-nodered-server) beschrieben.
+
+## Was der Flow macht
+
+```text
+MQTT-In (sensor/#)  ──▶  Payload parsen  ──▶  SQL-Insert  ──▶  PostgreSQL
+```
+
+## Noch zu dokumentieren
+
+- Welche MQTT-Topics abonniert werden (`sensor/temperatur`, `…/luftfeuchte`, `…/luftdruck`)
+- Wie die Nachricht aufbereitet wird (Payload → Felder)
+- SQL-Insert in die Datenbank (Tabelle, Spalten)
+- Fehlerbehandlung (z. B. Datenbank nicht erreichbar)
+- Export des Flows (JSON) als Backup / Anhang
+
+<Note>
+Gerüst – Finn ergänzt die Flow-Details (am besten Screenshot + Flow-Export).
+</Note>

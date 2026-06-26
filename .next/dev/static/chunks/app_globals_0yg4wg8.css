@@ -73,7 +73,13 @@
   :root, :host {
     --font-sans: "Inter", system-ui, sans-serif;
     --font-mono: "Fira Code", ui-monospace, monospace;
+    --color-red-50: #fef2f2;
+    --color-red-200: #ffcaca;
+    --color-red-300: #ffa3a3;
     --color-red-500: #fb2c36;
+    --color-red-700: #bf000f;
+    --color-red-800: #9f0712;
+    --color-red-950: #460809;
     --color-amber-50: #fffbeb;
     --color-amber-200: #fee685;
     --color-amber-300: #ffd236;
@@ -109,6 +115,12 @@
     --color-blue-700: #1447e6;
     --color-blue-800: #193cb8;
     --color-blue-950: #162456;
+    --color-violet-50: #f5f3ff;
+    --color-violet-200: #ddd6ff;
+    --color-violet-300: #c4b4ff;
+    --color-violet-700: #7008e7;
+    --color-violet-800: #5d0ec0;
+    --color-violet-950: #2f0d68;
     --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
@@ -155,7 +167,13 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
+      --color-red-50: lab(96.5005% 4.18511 1.52329);
+      --color-red-200: lab(86.017% 19.8815 7.75869);
+      --color-red-300: lab(76.5514% 36.4219 15.5335);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
+      --color-red-700: lab(40.4273% 67.2623 53.7441);
+      --color-red-800: lab(33.7174% 55.8993 41.0293);
+      --color-red-950: lab(13.003% 29.04 16.7519);
       --color-amber-50: lab(98.6252% -.635982 8.42309);
       --color-amber-200: lab(91.7203% -.505269 49.9084);
       --color-amber-300: lab(86.4156% 6.13147 78.3961);
@@ -191,6 +209,12 @@
       --color-blue-700: lab(36.9089% 35.0961 -85.6872);
       --color-blue-800: lab(30.2514% 27.7854 -70.2699);
       --color-blue-950: lab(15.6723% 8.86233 -32.2945);
+      --color-violet-50: lab(96.2416% 2.28846 -5.51655);
+      --color-violet-200: lab(87.0888% 8.53691 -19.4189);
+      --color-violet-300: lab(76.7419% 18.391 -37.0706);
+      --color-violet-700: lab(35.2783% 67.9912 -88.793);
+      --color-violet-800: lab(29.3188% 57.7986 -76.1493);
+      --color-violet-950: lab(14.0707% 33.3353 -46.7553);
       --color-gray-50: lab(98.2596% -.247031 -.706708);
       --color-gray-100: lab(96.1596% -.082314 -1.13575);
       --color-gray-200: lab(91.6229% -.159085 -2.26791);
@@ -710,6 +734,10 @@
     display: none;
   }
 
+  .inline-flex {
+    display: inline-flex;
+  }
+
   .table {
     display: table;
   }
@@ -1028,6 +1056,10 @@
     border-radius: .25rem;
   }
 
+  .rounded-full {
+    border-radius: 3.40282e38px;
+  }
+
   .rounded-lg {
     border-radius: var(--radius);
   }
@@ -1132,8 +1164,16 @@
     border-color: var(--color-green-200);
   }
 
+  .border-red-200 {
+    border-color: var(--color-red-200);
+  }
+
   .border-transparent {
     border-color: #0000;
+  }
+
+  .border-violet-200 {
+    border-color: var(--color-violet-200);
   }
 
   .bg-\[\#fafafa\] {
@@ -1236,8 +1276,16 @@
     }
   }
 
+  .bg-red-50 {
+    background-color: var(--color-red-50);
+  }
+
   .bg-transparent {
     background-color: #0000;
+  }
+
+  .bg-violet-50 {
+    background-color: var(--color-violet-50);
   }
 
   .bg-yellow-200 {
@@ -1313,6 +1361,10 @@
 
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
+  }
+
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
   }
 
   .px-4 {
@@ -1606,6 +1658,14 @@
 
   .text-red-500 {
     color: var(--color-red-500);
+  }
+
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+
+  .text-violet-700 {
+    color: var(--color-violet-700);
   }
 
   .italic {
@@ -1950,6 +2010,14 @@
     border-color: var(--color-green-800);
   }
 
+  .dark\:border-red-800:is(.dark *) {
+    border-color: var(--color-red-800);
+  }
+
+  .dark\:border-violet-800:is(.dark *) {
+    border-color: var(--color-violet-800);
+  }
+
   .dark\:bg-\[\#0d0d0f\]:is(.dark *) {
     background-color: #0d0d0f;
   }
@@ -2032,6 +2100,26 @@
     }
   }
 
+  .dark\:bg-red-950\/30:is(.dark *) {
+    background-color: #4608094d;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .dark\:bg-red-950\/30:is(.dark *) {
+      background-color: color-mix(in oklab, var(--color-red-950) 30%, transparent);
+    }
+  }
+
+  .dark\:bg-violet-950\/30:is(.dark *) {
+    background-color: #2f0d684d;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .dark\:bg-violet-950\/30:is(.dark *) {
+      background-color: color-mix(in oklab, var(--color-violet-950) 30%, transparent);
+    }
+  }
+
   .dark\:bg-yellow-800\/50:is(.dark *) {
     background-color: #874b0080;
   }
@@ -2080,6 +2168,14 @@
 
   .dark\:text-green-400:is(.dark *) {
     color: var(--color-green-400);
+  }
+
+  .dark\:text-red-300:is(.dark *) {
+    color: var(--color-red-300);
+  }
+
+  .dark\:text-violet-300:is(.dark *) {
+    color: var(--color-violet-300);
   }
 
   .dark\:invert:is(.dark *) {

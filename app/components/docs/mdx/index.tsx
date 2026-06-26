@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 // Component imports
 import { Card, CardGroup } from './card'
 import { Info, Tip, Warning, Note, Check } from './callout'
+import { Bearbeiter } from './bearbeiter'
 import { Steps, Step } from './steps'
 import { Tabs, Tab } from './tabs'
 import { Accordion, AccordionGroup } from './accordion'
@@ -17,6 +18,7 @@ import { Pre } from './pre'
 // Re-export for direct imports
 export { Card, CardGroup } from './card'
 export { Info, Tip, Warning, Note, Check } from './callout'
+export { Bearbeiter } from './bearbeiter'
 export { Steps, Step } from './steps'
 export { Tabs, Tab } from './tabs'
 export { Accordion, AccordionGroup } from './accordion'
@@ -35,6 +37,7 @@ export function getMDXComponents(): MDXComponents {
     Warning,
     Note,
     Check,
+    Bearbeiter,
     Steps,
     Step,
     Tabs,

@@ -1,25 +1,15 @@
-{"timestamp":"00:00:06.721","source":"Server","level":"LOG","message":"[MDX] generated files in 61.31660000000011ms"}
-{"timestamp":"00:00:06.754","source":"Server","level":"LOG","message":"[MDX] started dev server"}
-{"timestamp":"00:00:07.863","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:04:26.530","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:04:26.633","source":"Browser","level":"WARN","message":"Image with src \"http://localhost:3000/logo.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio."}
-{"timestamp":"00:04:26.647","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"http://localhost:3000/logo.svg\\\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \\\"auto\\\"' or 'height: \\\"auto\\\"' to maintain the aspect ratio.\\u001b[39m\""}
-{"timestamp":"00:04:26.648","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"http://localhost:3000/logo.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio.\u001b[39m"}
-{"timestamp":"00:05:30.373","source":"Server","level":"LOG","message":"✓ Compiled in 169ms"}
-{"timestamp":"00:05:38.752","source":"Server","level":"LOG","message":"✓ Compiled in 128ms"}
-{"timestamp":"00:05:49.996","source":"Server","level":"LOG","message":"[MDX] generated files in 16.154899999964982ms"}
-{"timestamp":"00:05:50.776","source":"Server","level":"LOG","message":"[MDX] generated files in 12.377700000011828ms"}
-{"timestamp":"00:05:51.970","source":"Server","level":"LOG","message":"✓ Compiled in 1888ms"}
-{"timestamp":"00:05:55.198","source":"Server","level":"LOG","message":"✓ Compiled in 131ms"}
-{"timestamp":"00:06:17.825","source":"Server","level":"LOG","message":"✓ Compiled in 91ms"}
-{"timestamp":"00:07:58.050","source":"Server","level":"LOG","message":"✓ Compiled in 124ms"}
-{"timestamp":"00:11:43.377","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:11:43.437","source":"Browser","level":"WARN","message":"Image with src \"http://localhost:3000/logo.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio."}
-{"timestamp":"00:11:43.440","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"http://localhost:3000/logo.svg\\\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \\\"auto\\\"' or 'height: \\\"auto\\\"' to maintain the aspect ratio.\\u001b[39m\""}
-{"timestamp":"00:11:43.441","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"http://localhost:3000/logo.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio.\u001b[39m"}
-{"timestamp":"00:12:24.854","source":"Server","level":"LOG","message":"✓ Compiled in 242ms"}
-{"timestamp":"00:12:27.755","source":"Server","level":"LOG","message":"✓ Compiled in 100ms"}
-{"timestamp":"00:13:15.955","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:13:15.998","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"http://localhost:3000/logo.svg\\\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \\\"auto\\\"' or 'height: \\\"auto\\\"' to maintain the aspect ratio.\\u001b[39m\""}
-{"timestamp":"00:13:15.998","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"http://localhost:3000/logo.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio.\u001b[39m"}
-{"timestamp":"00:13:15.999","source":"Browser","level":"WARN","message":"Image with src \"http://localhost:3000/logo.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio."}
+{"timestamp":"00:00:01.646","source":"Server","level":"LOG","message":"[MDX] generated files in 28.52859999999987ms"}
+{"timestamp":"00:00:01.675","source":"Server","level":"LOG","message":"[MDX] started dev server"}
+{"timestamp":"00:00:02.265","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:06.280","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:06.717","source":"Browser","level":"WARN","message":"Image with src \"http://localhost:3000/logo.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio."}
+{"timestamp":"00:00:06.720","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"http://localhost:3000/logo.svg\\\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \\\"auto\\\"' or 'height: \\\"auto\\\"' to maintain the aspect ratio.\\u001b[39m\""}
+{"timestamp":"00:00:06.720","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"http://localhost:3000/logo.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio.\u001b[39m"}
+{"timestamp":"01:43:37.464","source":"Server","level":"LOG","message":"✓ Compiled in 641ms"}
+{"timestamp":"01:50:05.992","source":"Server","level":"LOG","message":"✓ Compiled in 187ms"}
+{"timestamp":"01:50:08.726","source":"Server","level":"LOG","message":"✓ Compiled in 225ms"}
+{"timestamp":"01:56:53.719","source":"Server","level":"LOG","message":"✓ Compiled in 506ms"}
+{"timestamp":"01:56:57.283","source":"Server","level":"LOG","message":"✓ Compiled in 160ms"}
+{"timestamp":"02:00:24.243","source":"Server","level":"LOG","message":"✓ Compiled in 107ms"}
+{"timestamp":"02:02:29.273","source":"Server","level":"LOG","message":"✓ Compiled in 107ms"}
+{"timestamp":"02:02:31.187","source":"Server","level":"LOG","message":"✓ Compiled in 133ms"}
