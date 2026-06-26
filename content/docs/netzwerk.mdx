@@ -1,0 +1,41 @@
+---
+title: Netzwerk
+description: IP-Bereiche, VLAN und Firewall-Regeln der Cluster-F Group
+---
+
+Ergänzung von **Marcel**: Hier sind die Netzwerk-Eckdaten der Cluster-F Group dokumentiert – Adressbereich, VLAN und die Firewall-Logik.
+
+## IP-Bereich & VLAN
+
+Alle Maschinen der Cluster-F Group liegen im selben Subnetz und werden über ein eigenes VLAN getrennt.
+
+| Parameter    | Wert             |
+|--------------|------------------|
+| IP-Bereich   | `192.168.1.0/24` |
+| VLAN         | `VLAN10`         |
+
+<Note title="Adressvergabe">
+Die IPs werden per **DHCP** vergeben und können sich daher ändern. Das betrifft auch den MQTT-Broker – siehe [Konfiguration](/docs/konfiguration).
+</Note>
+
+## Firewall-Regeln
+
+Die Firewall (OPNsense, siehe [Maschinen](/docs/maschinen)) verhält sich wie ein **ganz normaler Router**: standardmäßig ist alles dicht, nur das Nötigste ist freigegeben.
+
+<Note title="Grundprinzip">
+
+- **Eingehend (von außen):** alles **zu** – kein Zugriff von außen auf das interne Netz.
+- **Ausgehend (nach außen):** grundsätzlich **nichts** raus – nur **Node-RED** und **MQTT** dürfen nach außen kommunizieren.
+
+</Note>
+
+| Richtung   | Dienst             | Regel        |
+|------------|--------------------|--------------|
+| Ausgehend  | Node-RED           | erlaubt      |
+| Ausgehend  | MQTT               | erlaubt      |
+| Ausgehend  | alles Übrige       | blockiert    |
+| Eingehend  | alles              | blockiert    |
+
+<Warning title="Neue Freigaben sparsam einsetzen">
+Jede zusätzliche Regel öffnet das Netz ein Stück weiter. Neue Ausnahmen nur dann anlegen, wenn ein Dienst sie zwingend braucht – und immer so eng wie möglich fassen (Quelle, Ziel, Port).
+</Warning>
