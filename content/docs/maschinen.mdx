@@ -13,13 +13,17 @@ Die Cluster-F Group besteht aus mehreren Maschinen. Jede Maschine ist für **ein
 Jede Maschine wird nach dem benannt, was auf ihr läuft. So erkennt man am Namen sofort den Dienst – und kann daraus direkt das Passwort ableiten.
 </Note>
 
-| Dienst     | Maschinenname | Zweck                         |
-|------------|---------------|-------------------------------|
-| unmint     | `unmint`      | Generiert diese Dokumentation |
-| Node-RED   | `nodered`     | Automatisierung & Flows       |
-| PostgreSQL | `posql`       | Datenbank                     |
-| OPNsense   | `opnsense`    | Firewall / Router             |
-| MQTT       | `mqtt`        | MQTT-Broker (Mosquitto)       |
+| Dienst     | Maschinenname | IP             | Zweck                         |
+|------------|---------------|----------------|-------------------------------|
+| unmint     | `unmint`      | —              | Generiert diese Dokumentation |
+| Node-RED   | `nodered`     | `192.168.1.3`  | Automatisierung & Flows       |
+| PostgreSQL | `posql`       | `192.168.1.10` | Datenbank                     |
+| OPNsense   | `opnsense`    | `172.16.3.38`  | Firewall / Router             |
+| MQTT       | `mqtt`        | `192.168.1.5`  | MQTT-Broker (Mosquitto)       |
+
+<Note title="Hosting der Doku">
+`unmint` ist der Server, auf dem **diese Dokumentation** läuft. Er ist bewusst ein **privater Server**, damit die Doku auch außerhalb des Unterrichts erreichbar ist. Das ist für die Abgabe wichtig.
+</Note>
 
 ## Zugangsdaten
 
