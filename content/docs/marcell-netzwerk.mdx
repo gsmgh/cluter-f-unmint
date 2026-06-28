@@ -17,7 +17,7 @@ Alle Maschinen der Cluster-F Group liegen im selben Subnetz und werden über ein
 | VLAN         | `VLAN10`         |
 
 <Note title="Adressvergabe">
-Die IPs werden per **DHCP** vergeben und können sich daher ändern. Das betrifft auch den MQTT-Broker – siehe [Konfiguration](/docs/konfiguration).
+Jeder Server bekommt über den **DHCP-Server der OPNsense** eine **feste IP** (DHCP-Reservierung). Die Adressen ändern sich also nicht.
 </Note>
 
 ## Firewall-Regeln

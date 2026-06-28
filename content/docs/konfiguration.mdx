@@ -9,15 +9,15 @@ Die wichtigsten Einstellungen befinden sich in der Datei `main.py`.
 
 ## MQTT-Broker-IP anpassen
 
-Der MQTT-Broker bezieht seine IP-Adresse per **DHCP** und kann sich daher ändern. Bei einer geänderten IP muss in `main.py` die Konstante `BROKER` angepasst werden:
+Der MQTT-Broker hat eine **feste IP** (per DHCP-Reservierung über die OPNsense). In `main.py` ist sie als Konstante `BROKER` eingetragen:
 
 ```python
 # main.py
-BROKER = "192.168.1.***"   # <-- IP des MQTT-Brokers
+BROKER = "192.168.1.5"     # <-- IP des MQTT-Brokers
 ```
 
 <Warning title="Broker nicht erreichbar?">
-Ändert sich die IP des Brokers, schlägt die Verbindung mit `ECONNABORTED` fehl. In diesem Fall die neue IP ermitteln und oben eintragen – siehe [Fehlerbehebung](/docs/fehlerbehebung).
+Ist der Broker nicht erreichbar, schlägt die Verbindung mit `ECONNABORTED` fehl. Dann prüfen, ob der Broker läuft und ob die IP in `main.py` stimmt (siehe [Fehlerbehebung](/docs/fehlerbehebung)).
 </Warning>
 
 ## MQTT-Topics
