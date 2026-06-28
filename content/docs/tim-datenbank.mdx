@@ -15,7 +15,7 @@ Die Datenbank läuft auf einer eigenen Debian-VM (ohne GUI). Hier werden die Mes
 | Maschinenname | `posql`                               |
 | Interne IP    | `192.168.1.10`                        |
 | Datenbank     | PostgreSQL 18                         |
-| DB-Name       | `messungen`                           |
+| DB-Name       | `sensordaten`                         |
 | Tabelle       | `messungen`                           |
 | DB-Benutzer   | `psql_F`                              |
 | Zugang        | siehe [Passwörter](/docs/passwoerter) |
@@ -26,12 +26,12 @@ PostgreSQL 18 ist als normale Standard-Installation auf der Debian-VM eingericht
 
 ## Zugriff / Benutzer
 
-Statt mit dem Standard-Superuser `postgres` zu arbeiten, wurde ein **eigener Benutzer `psql_F`** angelegt, der **nur auf die Datenbank `messungen`** zugreifen darf. So kommt Node-RED nur an genau diese eine Datenbank und nicht an den Rest des Systems.
+Statt mit dem Standard-Superuser `postgres` zu arbeiten, wurde ein **eigener Benutzer `psql_F`** angelegt, der **nur auf die Datenbank `sensordaten`** zugreifen darf. So kommt Node-RED nur an genau diese eine Datenbank und nicht an den Rest des Systems.
 
 ```sql
 -- eigener Benutzer nur für die Messdaten-DB (Passwort siehe Passwörter-Seite)
 CREATE USER psql_F WITH PASSWORD '...';
-GRANT CONNECT ON DATABASE messungen TO psql_F;
+GRANT CONNECT ON DATABASE sensordaten TO psql_F;
 GRANT SELECT, INSERT ON messungen TO psql_F;
 ```
 
@@ -39,7 +39,7 @@ Das Passwort von `psql_F` steht bei den [Passwörtern](/docs/passwoerter).
 
 ## Datenbank & Tabelle
 
-Es gibt die Datenbank **`messungen`** und darin die Tabelle **`messungen`**:
+Es gibt die Datenbank **`sensordaten`** und darin die Tabelle **`messungen`**:
 
 ```sql
 CREATE TABLE messungen (
@@ -62,5 +62,3 @@ CREATE TABLE messungen (
 | `humidity`     | `REAL`           | Luftfeuchte in %                           |
 
 Jede Messung bekommt automatisch eine `id` und einen `timestamp`. Die drei Messwerte (`temperatur`, `air_pressure`, `humidity`) kommen vom BME280 über den ESP32 und werden von Node-RED in die Tabelle geschrieben.
-
-Der Tabellenname `messungen` ist aus dem CREATE-Statement übernommen. Falls die Tabelle bei dir anders heißt, hier noch anpassen.
