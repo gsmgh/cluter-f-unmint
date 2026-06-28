@@ -1,9 +1,11 @@
 ---
-title: Netzwerk
+title: Netzwerk & Sicherheit
 description: IP-Bereiche, VLAN und Firewall-Regeln der Cluster-F Group
 ---
 
-Ergänzung von **Marcel**: Hier sind die Netzwerk-Eckdaten der Cluster-F Group dokumentiert – Adressbereich, VLAN und die Firewall-Logik.
+<Bearbeiter name="Marcel" />
+
+Hier sind die Netzwerk-Eckdaten der Cluster-F Group dokumentiert – Adressbereich, VLAN und die Firewall-Logik.
 
 ## IP-Bereich & VLAN
 
@@ -29,12 +31,12 @@ Die Firewall (OPNsense, siehe [Maschinen](/docs/maschinen)) verhält sich wie ei
 
 </Note>
 
-| Richtung   | Dienst             | Port   | Regel        |
-|------------|--------------------|--------|--------------|
-| Ausgehend  | alles              | –      | erlaubt      |
-| Eingehend  | Node-RED           | `1880` | erlaubt      |
-| Eingehend  | MQTT               | `1883` | erlaubt      |
-| Eingehend  | alles Übrige       | –      | blockiert    |
+| Richtung   | Dienst        | Port   | Regel     |
+|------------|---------------|--------|-----------|
+| Ausgehend  | alles         | –      | erlaubt   |
+| Eingehend  | Node-RED      | `1880` | erlaubt   |
+| Eingehend  | MQTT          | `1883` | erlaubt   |
+| Eingehend  | alles Übrige  | –      | blockiert |
 
 <Warning title="Neue Freigaben sparsam einsetzen">
 Jede zusätzliche Regel öffnet das Netz ein Stück weiter. Neue Ausnahmen nur dann anlegen, wenn ein Dienst sie zwingend braucht – und immer so eng wie möglich fassen (Quelle, Ziel, Port).

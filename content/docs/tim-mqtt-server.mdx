@@ -1,0 +1,49 @@
+---
+title: MQTT-Broker-Server
+description: Debian-VM mit Mosquitto als MQTT-Broker, mit eigener Benutzer-Authentifizierung
+---
+
+<Bearbeiter name="Tim" />
+
+Der MQTT-Broker läuft auf einer eigenen Debian-VM (ohne GUI). Er nimmt die Messwerte vom ESP32 entgegen und stellt sie für Node-RED bereit. Als Broker wird **Mosquitto** genutzt.
+
+## Eckdaten
+
+| Punkt         | Wert                                  |
+|---------------|---------------------------------------|
+| VM            | Debian (ohne GUI)                     |
+| Maschinenname | `mqtt`                                |
+| Interne IP    | `192.168.1.3`                         |
+| Broker        | Mosquitto                             |
+| Port          | `1883`                                |
+| Auth          | Benutzer + Passwort (Passwort-Datei)  |
+| MQTT-Benutzer | `mqtt_f`                              |
+| Zugang        | siehe [Passwörter](/docs/passwoerter) |
+
+## Installation
+
+Mosquitto ist als normale Standard-Installation auf der Debian-VM eingerichtet.
+
+## Authentifizierung (Besonderheit)
+
+Standardmäßig würde Mosquitto jeden ohne Login annehmen. Damit nur unsere Geräte zugreifen, ist in der Config eine **Passwort-Datei** eingetragen und der anonyme Zugriff abgeschaltet. Darüber wurde ein eigener Benutzer **`mqtt_f`** für unsere Gruppe angelegt. Mit dem meldet sich der ESP32 (publish) und Node-RED (subscribe) am Broker an.
+
+In der Mosquitto-Config:
+
+```text
+# /etc/mosquitto/mosquitto.conf (bzw. eine Datei in conf.d)
+allow_anonymous false
+password_file /etc/mosquitto/passwd
+```
+
+Benutzer anlegen (das `-c` legt die Passwort-Datei neu an):
+
+```bash
+sudo mosquitto_passwd -c /etc/mosquitto/passwd mqtt_f
+```
+
+Das Passwort von `mqtt_f` steht bei den [Passwörtern](/docs/passwoerter).
+
+## Topics
+
+Die genutzten Topics (vom ESP32 befüllt) stehen in Finns [Konfiguration](/docs/konfiguration): `sensor/temperatur`, `sensor/luftfeuchte`, `sensor/luftdruck`.

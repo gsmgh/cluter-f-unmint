@@ -1,59 +1,57 @@
 ---
 title: Übersicht
-description: ESP32-Umweltsensor mit BME280, der Messwerte per WLAN über MQTT überträgt
+description: Messdatenerfassung mit ESP32, virtualisiert auf einem Proxmox-Cluster – Projektübersicht und Aufgabenverteilung
 ---
 
-Diese Dokumentation beschreibt einen **ESP32-basierten Umweltsensor**, der die Messwerte eines **BME280** (Temperatur, Luftfeuchte, Luftdruck) ausliest und per WLAN über **MQTT** an einen Broker im lokalen Netzwerk sendet.
+<Bearbeiter name="Team" />
 
-<Note title="Umfang dieser Dokumentation">
-Hier wird ausschließlich der **Software-Teil** des Projekts behandelt.
-</Note>
+Dieses Projekt erfasst Messdaten mit einem **ESP32**, speichert sie dauerhaft in einer **Datenbank** und wertet sie mit einem **Python-Skript** aus. Der komplette Stack läuft **virtualisiert** auf einem **Proxmox-Cluster** aus drei Hosts.
 
 ## Datenfluss
 
-Der ESP32 liest in regelmäßigen Abständen die Werte des BME280 über den I²C-Bus aus und veröffentlicht sie als MQTT-Nachrichten an den Broker.
-
 ```text
- ┌──────────┐   I²C    ┌──────────────┐   WLAN / MQTT   ┌──────────────┐
- │  BME280  │ ───────▶ │     ESP32    │ ──────────────▶ │ MQTT-Broker  │
- │  Sensor  │          │ (MicroPython)│                 │ (Mosquitto)  │
- └──────────┘          └──────────────┘                 └──────────────┘
-   T · H · P              main.py                          sensor/…
+ ESP32  ──MQTT──▶  MQTT-Broker  ──▶  Node-RED  ──▶  Datenbank  ──▶  Python-Auswertung
+(Sensor)          (Mosquitto)       (Middleware)    (PostgreSQL)     (Visualisierung)
 ```
 
-## Komponenten
+Alles läuft als VMs im Proxmox-Cluster und wird über eine OPNsense-Firewall abgesichert.
 
-| Komponente   | Verwendung                                  |
-|--------------|---------------------------------------------|
-| ESP32        | Mikrocontroller mit WLAN-Modul              |
-| BME280       | Sensor für Temperatur, Feuchte, Luftdruck   |
-| MicroPython  | Firmware / Laufzeitumgebung auf dem ESP32   |
-| Thonny       | Entwicklungsumgebung (IDE)                  |
-| MQTT-Broker  | Empfänger der Sensordaten (z. B. Mosquitto) |
+## Wer hat was gemacht
 
-## Inhalt
+| Person      | Bereich                | Inhalt                                                        |
+|-------------|------------------------|--------------------------------------------------------------|
+| **Tim**     | Server & Infrastruktur | Datenbank-, MQTT- und Node-RED-Server (Debian-VMs) aufgesetzt |
+| **Finn**    | Software & Code        | ESP32 programmiert, MQTT angebunden, Node-RED-Flows           |
+| **Marcel** | Netzwerk & Sicherheit  | OPNsense-Firewall, Vernetzung & Absicherung der VMs           |
+
+> Der **Proxmox-Cluster** wurde gemeinsam aufgesetzt: jeder hat seinen eigenen PVE-Host installiert und ins Cluster integriert (mit Live-Migration zwischen den Hosts).
+
+## Anforderungen aus der Aufgabe
+
+| Anforderung                                | Status   | Wer      |
+|--------------------------------------------|----------|----------|
+| Proxmox-Cluster (3 Hosts, Live-Migration)  | läuft    | Team     |
+| Debian-VM: Datenbankserver                 | ok       | Tim      |
+| Debian-VM: MQTT-Broker                     | ok       | Tim      |
+| Debian-VM (GUI): Node-RED als Middleware   | ok       | Tim/Finn |
+| Messdatenerfassung mit ESP32 → MQTT        | ok       | Finn     |
+| Python-Auswertungsskript                   | ok       | Finn     |
+| Netzwerkplanung & Sicherheit               | ok       | Marcel  |
+| KI-Nutzung dokumentiert                    | siehe [KI-Nutzung](/docs/ki-nutzung) | Team |
+
+## Bereiche
 
 <CardGroup cols={2}>
-  <Card title="Installation" icon="terminal" href="/docs/installation">
-    Libraries installieren und die Dateien auf den ESP32 bringen.
+  <Card title="Tim · Server" icon="server" href="/docs/tim-datenbank">
+    Datenbank-, MQTT- und Node-RED-Server.
   </Card>
-  <Card title="Konfiguration" icon="gear" href="/docs/konfiguration">
-    Broker-Adresse einstellen und die MQTT-Topics im Überblick.
+  <Card title="Finn · Software" icon="code" href="/docs/installation">
+    ESP32, MQTT-Anbindung und Node-RED-Flows.
   </Card>
-  <Card title="Funktionsweise" icon="book" href="/docs/ablauf">
-    Wie das Programm zur Laufzeit arbeitet – und der Entwicklungs-Workflow.
+  <Card title="Marcel · Netzwerk" icon="plug" href="/docs/marcell-netzwerk">
+    OPNsense, VLAN und Firewall-Regeln.
   </Card>
-  <Card title="Fehlerbehebung" icon="code" href="/docs/fehlerbehebung">
-    Häufige Fehlermeldungen und ihre Lösungen.
-  </Card>
-  <Card title="Maschinen" icon="server" href="/docs/maschinen">
-    Übersicht der Maschinen und der darauf laufenden Dienste.
-  </Card>
-  <Card title="Passwörter" icon="lock" href="/docs/passwoerter">
-    Zentrale Zugangsdaten – inklusive Namens- und Passwort-Regel.
+  <Card title="KI-Nutzung" icon="book" href="/docs/ki-nutzung">
+    Wo KI eingesetzt wurde (Pflicht laut Aufgabe).
   </Card>
 </CardGroup>
-
----
-
-Erstellt von **Finn**.

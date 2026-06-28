@@ -3,6 +3,8 @@ title: Passwörter
 description: Zentrale Ablage aller Zugangsdaten der Cluster-F-Maschinen – inklusive Namens- und Passwort-Regel
 ---
 
+<Bearbeiter name="Team" />
+
 Hier liegen die Zugangsdaten **aller Maschinen** der Cluster-F Group an einem Ort. Damit man sich nichts merken muss, folgt alles einer festen Regel – sie steht ganz oben.
 
 ## Die Regel
@@ -36,6 +38,15 @@ Diese Seite enthält echte Zugangsdaten. Sie gehört **nicht** in ein öffentlic
 | `posql`    | PostgreSQL – Datenbank             | `IchbinPOSQL`    |
 | `opnsense` | OPNsense – Firewall / Router       | `IchbinOPNSENSE` |
 | `mqtt`     | MQTT-Broker (Mosquitto)            | `IchbinMQTT`     |
+
+## Dienst-Zugänge
+
+Eigene Benutzer **innerhalb der Dienste** (nicht zu verwechseln mit dem Login der Maschinen):
+
+| Dienst     | Benutzer | Wofür                                            | Passwort           |
+|------------|----------|--------------------------------------------------|--------------------|
+| PostgreSQL | `psql_F` | Zugriff auf die Datenbank `sensordaten` (Node-RED) | `IchbinPSQL`       |
+| MQTT       | `mqtt_f` | Anmeldung am Mosquitto-Broker (ESP32 + Node-RED) | `IchbinMQTT` |
 
 ## Neue Maschine aufnehmen
 

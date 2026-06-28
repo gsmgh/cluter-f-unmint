@@ -1,0 +1,40 @@
+---
+title: Node-RED-Server
+description: Debian-VM mit GUI, auf der Node-RED über das offizielle Install-Skript läuft
+---
+
+<Bearbeiter name="Tim" />
+
+Debian-VM (**mit GUI**), auf der **Node-RED** läuft. Node-RED ist die Middleware, die die Daten vom MQTT-Broker in die Datenbank schreibt. Die Flows selbst sind in [Finns Bereich](/docs/finn-nodered-flows) beschrieben.
+
+## Eckdaten
+
+| Punkt          | Wert                                  |
+|----------------|---------------------------------------|
+| VM             | Debian (mit GUI)                      |
+| Maschinenname  | `nodered`                             |
+| Interne IP     | `192.168.1.5`                         |
+| Dienst         | Node-RED                              |
+| Web-Oberfläche | Port `1880`                           |
+| Netzwerk       | hinter der OPNsense, per NAT auf Port `1880` |
+| Zugang         | siehe [Passwörter](/docs/passwoerter) |
+
+## Installation
+
+Node-RED ist mit dem **offiziellen Install-Skript** eingerichtet, ohne Sonderkonfiguration. Das Skript installiert Node.js und Node-RED und richtet Node-RED als Dienst ein:
+
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+```
+
+Danach als Dienst aktivieren (Autostart):
+
+```bash
+sudo systemctl enable --now nodered.service
+```
+
+Die Weboberfläche läuft auf dem Standard-Port `1880`. Der Server steht **hinter der OPNsense** und ist von außen per **NAT (Port-Weiterleitung)** auf dem Standard-Port erreichbar. Die Firewall- und Weiterleitungs-Details stehen in [Marcels Netzwerk-Teil](/docs/marcell-netzwerk).
+
+## Was läuft darauf
+
+Auf dem Server läuft nur Node-RED. Die eigentlichen Flows (MQTT abonnieren, Werte in die Datenbank schreiben) sind in [Finns Node-RED-Flows](/docs/finn-nodered-flows) dokumentiert.

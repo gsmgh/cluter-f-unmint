@@ -1,0 +1,35 @@
+---
+title: Node-RED-Flows
+description: Flows, die die Messwerte vom MQTT-Broker in die Datenbank schreiben
+---
+
+<Bearbeiter name="Finn" />
+
+Die Flows in Node-RED holen die Messwerte vom MQTT-Broker und schreiben sie in die PostgreSQL-Datenbank. Der Server selbst (die VM) ist in [Tims Bereich](/docs/tim-nodered-server) beschrieben.
+
+## Aufbau des Flows
+
+```text
+MQTT-In (sensor/#)  ──▶  Function (in 3 Werte aufteilen)  ──▶  SQL-Insert  ──▶  PostgreSQL
+```
+
+## Die Knoten im Einzelnen
+
+### 1. MQTT-In
+
+Abonniert **alle Sensor-Topics** über den Wildcard `sensor/#`. Damit kommt alles rein, was der ESP32 veröffentlicht (`sensor/temperatur`, `sensor/luftfeuchte`, `sensor/luftdruck`).
+
+### 2. Function
+
+Ein Function-Node teilt die eingehenden Daten in die **drei Werte** auf: **Temperatur**, **Luftdruck** und **Luftfeuchte**. Sie werden so aufbereitet, dass sie als Parameter an den SQL-Insert weitergegeben werden können.
+
+### 3. SQL-Insert
+
+Die drei Werte werden per `INSERT` in die Tabelle `messungen` geschrieben. Den Zeitstempel setzt die Datenbank automatisch (`DEFAULT now()`).
+
+```sql
+INSERT INTO messungen (temperatur, air_pressure, humidity)
+VALUES ($1, $2, $3);
+```
+
+Die Datenbank-Details (DB `sensordaten`, Tabelle `messungen`, Benutzer `psql_F`) stehen auf der [Datenbank-Seite](/docs/tim-datenbank).

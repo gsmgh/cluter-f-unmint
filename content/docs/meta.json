@@ -2,15 +2,22 @@
   "title": "Cluster-F",
   "pages": [
     "index",
-    "---Einrichtung---",
+    "---Tim · Server & Infrastruktur---",
+    "tim-datenbank",
+    "tim-mqtt-server",
+    "tim-nodered-server",
+    "---Finn · Software & Code---",
     "installation",
     "konfiguration",
-    "---Betrieb---",
     "ablauf",
     "fehlerbehebung",
+    "finn-nodered-flows",
+    "finn-python-auswertung",
+    "---Marcel · Netzwerk & Sicherheit---",
+    "marcell-netzwerk",
     "---Infrastruktur---",
-    "netzwerk",
     "maschinen",
-    "passwoerter"
+    "passwoerter",
+    "ki-nutzung"
   ]
 }

@@ -1,0 +1,64 @@
+---
+title: Datenbank-Server
+description: Debian-VM mit PostgreSQL 18, in der die Messdaten gespeichert werden
+---
+
+<Bearbeiter name="Tim" />
+
+Die Datenbank läuft auf einer eigenen Debian-VM (ohne GUI). Hier werden die Messwerte gespeichert, die Node-RED aus dem MQTT-Broker holt. Als Datenbank wird **PostgreSQL 18** genutzt.
+
+## Eckdaten
+
+| Punkt         | Wert                                  |
+|---------------|---------------------------------------|
+| VM            | Debian (ohne GUI)                     |
+| Maschinenname | `posql`                               |
+| Interne IP    | `192.168.1.10`                        |
+| Datenbank     | PostgreSQL 18                         |
+| DB-Name       | `sensordaten`                         |
+| Tabelle       | `messungen`                           |
+| DB-Benutzer   | `psql_F`                              |
+| Zugang        | siehe [Passwörter](/docs/passwoerter) |
+
+## Installation
+
+PostgreSQL 18 ist als normale Standard-Installation auf der Debian-VM eingerichtet. Die VM hängt im internen Netz unter der festen IP `192.168.1.10`.
+
+## Zugriff / Benutzer
+
+Statt mit dem Standard-Superuser `postgres` zu arbeiten, wurde ein **eigener Benutzer `psql_F`** angelegt, der **nur auf die Datenbank `sensordaten`** zugreifen darf. So kommt Node-RED nur an genau diese eine Datenbank und nicht an den Rest des Systems.
+
+```sql
+-- eigener Benutzer nur für die Messdaten-DB (Passwort siehe Passwörter-Seite)
+CREATE USER psql_F WITH PASSWORD '...';
+GRANT CONNECT ON DATABASE sensordaten TO psql_F;
+GRANT SELECT, INSERT ON messungen TO psql_F;
+```
+
+Das Passwort von `psql_F` steht bei den [Passwörtern](/docs/passwoerter).
+
+## Datenbank & Tabelle
+
+Es gibt die Datenbank **`sensordaten`** und darin die Tabelle **`messungen`**:
+
+```sql
+CREATE TABLE messungen (
+    id           BIGSERIAL PRIMARY KEY,
+    timestamp    TIMESTAMPTZ NOT NULL DEFAULT now(),
+    temperatur   REAL,
+    air_pressure REAL,
+    humidity     REAL
+);
+```
+
+### Spalten
+
+| Spalte         | Typ              | Bedeutung                                  |
+|----------------|------------------|--------------------------------------------|
+| `id`           | `BIGSERIAL` (PK) | Fortlaufende ID, wird automatisch vergeben |
+| `timestamp`    | `TIMESTAMPTZ`    | Zeitpunkt der Messung, Standard `now()`    |
+| `temperatur`   | `REAL`           | Temperatur in °C                           |
+| `air_pressure` | `REAL`           | Luftdruck in hPa                           |
+| `humidity`     | `REAL`           | Luftfeuchte in %                           |
+
+Jede Messung bekommt automatisch eine `id` und einen `timestamp`. Die drei Messwerte (`temperatur`, `air_pressure`, `humidity`) kommen vom BME280 über den ESP32 und werden von Node-RED in die Tabelle geschrieben.
